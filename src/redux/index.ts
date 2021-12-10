@@ -1,5 +1,5 @@
 export * from "./store";
 
-export * as actionCreator from "./action-creator/SearchRepositories";
+export * as npmPackage from "./NpmPackage/package.action";
 
-export * from "./reducers";
+export * from "./rootReducer";

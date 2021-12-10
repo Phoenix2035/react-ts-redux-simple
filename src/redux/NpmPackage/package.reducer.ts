@@ -1,5 +1,5 @@
-import { Action } from "./../actions";
-import { ActionType } from "./../types";
+import { Action } from "./package.interface";
+import { Types } from "./package.types";
 
 interface RepositoriesState {
   loading: boolean;
@@ -18,11 +18,11 @@ const repositoriesReducer = (
   action: Action
 ): RepositoriesState => {
   switch (action.type) {
-    case ActionType.SEARCH_REPOSITORIES:
+    case Types.SEARCH_REPOSITORIES:
       return { loading: true, error: null, data: [] };
-    case ActionType.SEARCH_REPOSITORIES_SUCCESS:
+    case Types.SEARCH_REPOSITORIES_SUCCESS:
       return { loading: false, error: null, data: action.payload };
-    case ActionType.SEARCH_REPOSITORIES_ERROR:
+    case Types.SEARCH_REPOSITORIES_ERROR:
       return { loading: false, error: action.payload, data: [] };
     default:
       return state;
